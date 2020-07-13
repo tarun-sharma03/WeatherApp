@@ -27,7 +27,7 @@ export default class HomeScreen extends React.Component {
       }
     }
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${myCity}&units=metric&appid=914847e4088524b349fbb746a64512a5`
+      `http://api.openweathermap.org/data/2.5/weather?q=${myCity}&units=metric&appid=<YOUR API KEY>`
     )
       .then((res) => res.json())
       .then((data2) => {
