@@ -26,7 +26,6 @@ export default class HomeScreen extends React.Component {
         myCity = this.props.route.params.city;
       }
     }
-
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${myCity}&units=metric&appid=914847e4088524b349fbb746a64512a5`
     )
@@ -41,6 +40,13 @@ export default class HomeScreen extends React.Component {
           icon: data2.weather[0].icon,
         });
         // console.log(data2);
+      })
+
+      .catch((err) => {
+        alert(
+          "Some Error Occured!! Either the city does not exist or your internet is not connected!!"
+        );
+        this.props.navigation.navigate("Search");
       });
   }
 
